@@ -7,12 +7,5 @@ import Capacitor
  */
 @objc(CapacitorVoxeetPushPlugin)
 public class CapacitorVoxeetPushPlugin: CAPPlugin {
-    private let implementation = CapacitorVoxeetPush()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
-    }
 }
