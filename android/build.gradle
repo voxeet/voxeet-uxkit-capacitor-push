@@ -3,6 +3,9 @@ ext {
     androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.2.0'
     androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.1.2'
     androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.3.0'
+
+    voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.1.0'
+    firebaseMessagingVersion =  project.hasProperty('firebaseMessagingVersion') ? rootProject.ext.firebaseMessagingVersion : '20.1.2'
 }
 
 buildscript {
@@ -42,6 +45,8 @@ android {
 }
 
 repositories {
+    maven { url "https://android-sdk.voxeet.com/release" }
+    maven { url "https://android-sdk.voxeet.com/beta" }
     google()
     jcenter()
     mavenCentral()
@@ -55,4 +60,9 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+
+    compileOnly "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
+
+    implementation "com.voxeet.sdk:sdk:$voxeetSdkVersion"
+    implementation "com.voxeet.sdk:uxkit-firebase:$voxeetSdkVersion"
 }
