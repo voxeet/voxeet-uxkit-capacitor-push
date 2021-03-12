@@ -4,7 +4,7 @@ ext {
     androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.1.2'
     androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.3.0'
 
-    voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.1.0'
+    voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.1.1'
     firebaseMessagingVersion =  project.hasProperty('firebaseMessagingVersion') ? rootProject.ext.firebaseMessagingVersion : '20.1.2'
 }
 
