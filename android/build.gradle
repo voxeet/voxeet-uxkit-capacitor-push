@@ -4,27 +4,27 @@ ext {
     androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.1.2'
     androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.3.0'
 
-    voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.1.1'
+    voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.7.1'
     firebaseMessagingVersion =  project.hasProperty('firebaseMessagingVersion') ? rootProject.ext.firebaseMessagingVersion : '20.1.2'
 }
 
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath 'com.android.tools.build:gradle:7.2.1'
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
+    compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 32
     defaultConfig {
         minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 21
-        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 30
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 32
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -45,10 +45,19 @@ android {
 }
 
 repositories {
-    maven { url "https://android-sdk.voxeet.com/release" }
-    maven { url "https://android-sdk.voxeet.com/beta" }
+    maven {
+        url "https://android-sdk.voxeet.com/release"
+        content {
+            includeGroup "com.voxeet.sdk"
+        }
+    }
+    maven {
+        url "https://android-sdk.voxeet.com/beta"
+        content {
+            includeGroup "com.voxeet.sdk"
+        }
+    }
     google()
-    jcenter()
     mavenCentral()
 }
 

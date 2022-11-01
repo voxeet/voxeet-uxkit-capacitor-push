@@ -4,6 +4,7 @@
     <application>
         <service
             android:name=".CapacitorVoxeetPushMessagingService"
+            android:exported="true"
             android:stopWithTask="false">
             <intent-filter android:priority="800">
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
