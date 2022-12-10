@@ -1,0 +1,18 @@
+name: Attempt to build plugin for push notifications
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: prepare
+        run: |
+          mkdir -p /tmp/plugin
+          cp -r * /tmp/plugin
+
+      - name: build for android
+        run: |
+          export JAVA_HOME="$JAVA_HOME_17_X64"
+          cd /tmp/plugin/android
+          ./gradlew :assembleRelease

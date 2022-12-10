@@ -4,7 +4,8 @@ ext {
     androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.1.2'
     androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.3.0'
 
-    voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.7.1'
+    voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.7.2'
+    voxeetUXKitVersion =  project.hasProperty('voxeetUXKitVersion') ? rootProject.ext.voxeetSdkVersion : '3.7.5'
     firebaseMessagingVersion =  project.hasProperty('firebaseMessagingVersion') ? rootProject.ext.firebaseMessagingVersion : '20.1.2'
 }
 
@@ -21,10 +22,10 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 32
+    compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 33
     defaultConfig {
         minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 21
-        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 32
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -73,5 +74,5 @@ dependencies {
     compileOnly "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
 
     implementation "com.voxeet.sdk:sdk:$voxeetSdkVersion"
-    implementation "com.voxeet.sdk:uxkit-firebase:$voxeetSdkVersion"
+    implementation "io.dolby:uxkit-firebase:$voxeetUXKitVersion"
 }

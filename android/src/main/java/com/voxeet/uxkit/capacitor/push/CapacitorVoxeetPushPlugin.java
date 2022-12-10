@@ -1,9 +1,10 @@
 package com.voxeet.uxkit.capacitor.push;
 
 import com.getcapacitor.Plugin;
-import com.getcapacitor.annotation.CapacitorPlugin;
+//Removed it for retrocompatibility issue (investigating?)
+//import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin(name = "CapacitorVoxeetPush")
+//@CapacitorPlugin(name = "CapacitorVoxeetPush")
 public class CapacitorVoxeetPushPlugin extends Plugin {
 
 }
