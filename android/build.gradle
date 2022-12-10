@@ -6,7 +6,7 @@ ext {
 
     voxeetSdkVersion =  project.hasProperty('voxeetSdkVersion') ? rootProject.ext.voxeetSdkVersion : '3.7.2'
     voxeetUXKitVersion =  project.hasProperty('voxeetUXKitVersion') ? rootProject.ext.voxeetSdkVersion : '3.7.5'
-    firebaseMessagingVersion =  project.hasProperty('firebaseMessagingVersion') ? rootProject.ext.firebaseMessagingVersion : '20.1.2'
+    firebaseMessagingVersion =  project.hasProperty('firebaseMessagingVersion') ? rootProject.ext.firebaseMessagingVersion : '17.4.0'
 }
 
 buildscript {
