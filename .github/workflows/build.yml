@@ -14,5 +14,7 @@ jobs:
       - name: build for android
         run: |
           export JAVA_HOME="$JAVA_HOME_17_X64"
-          cd /tmp/plugin/android
+          cd /tmp/plugin
+          npm install
+          cd android
           ./gradlew :assembleRelease
